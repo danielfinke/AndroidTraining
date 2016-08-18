@@ -42,16 +42,38 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onPause");
     }
 
+    /**
+     * Not called (though onPause is) when partially-obscured, i.e. by dialog
+     */
     @Override
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop");
     }
 
+    /**
+     * Not called when the app is force-killed by user
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState");
+    }
+
+    /**
+     * Called on configuration changes
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG, "onRestoreInstanceState");
     }
 
     /** Called when the user clicks the Send button */
