@@ -2,4 +2,5 @@
     <string name="app_name">Android Training</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="static_fragment_text">I am a static fragment, defined in XML</string>
 </resources>
